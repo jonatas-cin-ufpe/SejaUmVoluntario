@@ -1,0 +1,7 @@
+﻿.container {
+    width: 100%; /*largura*/
+    max-width: 960px; /*largura máxima*/
+    height: 100%; /*altura*/
+    margin-left: auto; /*margens*/
+    margin-right: auto;
+}
