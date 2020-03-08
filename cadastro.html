@@ -18,7 +18,7 @@
         </header>
         <section class="form-row">
             <h2 class="text-green">Cadastre sua vaga de voluntariado</h2>
-            <form class="flex">
+            <form class="flex" onsubmit="return validateNotice(this)">
                 <input type="text" name="email" class="col-full" placeholder="Informe o email do responsável">
 
                 <textarea name="descricao" placeholder="Informe a descrição da vaga ..." rows="4"></textarea>
@@ -38,7 +38,24 @@
         </footer>
 
     </main>
+    <script>
 
+        const validateField = (field, message) => {
+            if (!field.value && field.value.trim() == "") {
+                alert(message)
+                  return false
+            }
+            return true
+        }
 
+        const validateNotice = (form) => {
+
+            return validateField(form.email, "Email deve ser informado") &&
+            validateField(form.descricao, "Descrição deve ser informada")&&
+            validateField(form.titulo, "Título deve ser informado") &&
+            validateField(form.cidade, "Cidade deve ser informada")
+
+        }
+    </script>
 </body>
 </html>
